@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Builder Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loadingScreen" class="loader-screen">
+    <div class="loader-box">
+      <div class="spinner"></div>
+      <p>Loading Resume Builder...</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <h1>Resume Builder Pro</h1>
+    <button onclick="goToLanding()">Home</button>
+  </div>
+
+  <!-- Landing Page -->
+  <div id="landingPage" class="hero">
+    <h2>Create Your Professional Resume</h2>
+    <button class="cta" onclick="goToBuilder()">Start Building</button>
+    <button class="ghost" onclick="loadDemo()">Load Demo</button>
+  </div>
+
+  <!-- Builder Page -->
+  <div id="builderPage" class="hidden container">
+    <div class="form">
+      <h2>Resume Details</h2>
+      <input id="name" placeholder="Full Name">
+      <input id="email" placeholder="Email">
+      <input id="phone" placeholder="Phone">
+      <input id="address" placeholder="Address">
+      <textarea id="summary" placeholder="Summary"></textarea>
+      <textarea id="skills" placeholder="Skills (comma separated)"></textarea>
+      <textarea id="experience" placeholder="Experience"></textarea>
+      <textarea id="education" placeholder="Education"></textarea>
+      <textarea id="projects" placeholder="Projects"></textarea>
+      <textarea id="certifications" placeholder="Certifications"></textarea>
+      <textarea id="languages" placeholder="Languages"></textarea>
+      <textarea id="achievements" placeholder="Achievements"></textarea>
+      <textarea id="interests" placeholder="Interests"></textarea>
+      <input id="linkedin" placeholder="LinkedIn URL">
+      <input id="github" placeholder="GitHub URL">
+      <input id="portfolio" placeholder="Portfolio URL">
+
+      <div class="toolbar">
+        <button onclick="saveData()">Save</button>
+        <button onclick="clearForm()">Clear</button>
+        <button onclick="openPreview()">Preview</button>
+        <button onclick="downloadPDF()">Download PDF</button>
+      </div>
+    </div>
+
+    <div class="preview">
+      <h2>Preview</h2>
+      <div id="resumeOutput" class="resume-box">
+        <div class="page"><p>Fill in your details to see preview here.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preview Modal -->
+  <div id="previewModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" onclick="closePreview()">&times;</span>
+      <h2>Resume Preview</h2>
+      <div id="modalResume"></div>
+      <button onclick="confirmDownload()">Download PDF</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
